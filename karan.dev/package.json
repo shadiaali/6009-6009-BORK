@@ -12,9 +12,9 @@
     "express": "~4.16.1",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.3",
+    "johnny-five": "^1.4.0",
     "mongoose": "^5.9.7",
     "morgan": "~1.9.1",
-    "johnny-five": "^1.4.0",
     "node-pixel": "^0.10.2",
     "nodebots-interchange": "^2.0.1",
     "socket.io": "^2.3.0"

@@ -7,9 +7,12 @@ var path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-//http.listen(3000, function () {
-//    console.log(`server running at http://localhost:3000`);
-//})
+http.listen(3001, function () {
+    console.log(`server running at http://localhost:3001`);
+    
+})
+
+
 
 let five = require('johnny-five');
 let arduino = new five.Board();
@@ -22,6 +25,11 @@ let temperature;
         light_pin_led.toggle();
     })
 }) */
+
+
+
+
+
 
 arduino.on('ready', function () {
     console.log("arduino is running");
