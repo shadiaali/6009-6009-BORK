@@ -3,12 +3,13 @@ let pixel = require('node-pixel');
 let app = express();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
+var path = require('path');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-http.listen(3000, function () {
-    console.log(`server running at http://localhost:3000`);
-})
+//http.listen(3000, function () {
+//    console.log(`server running at http://localhost:3000`);
+//})
 
 let five = require('johnny-five');
 let arduino = new five.Board();

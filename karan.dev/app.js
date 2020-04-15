@@ -31,6 +31,9 @@ mongoose.connect(mongodb)
 });
 
 var app = express();
+let http = require('http').createServer(app);
+let io = require('socket.io')(http);
+
 
 //Allow CORS
 app.use(function(req, res, next) {
