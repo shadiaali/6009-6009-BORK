@@ -5,10 +5,27 @@ var router = express.Router();
 var Dog = require('../models/Dog');
 var Training = require('../models/Training');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+
+router.get('/', function (req, res, next) {
+  res.render('login');
+  
 });
+
+router.get('/dash', function (req, res, next) {
+  res.render('index', {
+    title: 'express'
+  });
+  
+});
+
+router.get('/breeds', function (req, res, next) {
+  res.render('breeds', {
+    title: 'express'
+  });
+  
+});
+
 
 /* API Breeds route page. */
 router.get('/api/bork', function(req, res, next) {
@@ -25,6 +42,8 @@ router.get('/api/training', function(req, res, next) {
     res.json(training);
   })
 });
+
+
 
 router.post('/api/bork', function(req, res, next) {
   Dog.create(req.body)

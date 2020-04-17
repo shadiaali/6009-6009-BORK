@@ -34,7 +34,6 @@ var app = express();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
-
 //Allow CORS
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -62,6 +61,7 @@ app.use(
 );
 
 app.use('/', indexRouter);
+app.use('/dash', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

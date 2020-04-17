@@ -1,17 +1,20 @@
 {
-  "name": "j5-socket-io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "karan.dev",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.0",
+    "http-errors": "~1.6.3",
     "johnny-five": "^1.4.0",
+    "mongoose": "^5.9.7",
+    "morgan": "~1.9.1",
     "node-pixel": "^0.10.2",
     "nodebots-interchange": "^2.0.1",
     "socket.io": "^2.3.0"

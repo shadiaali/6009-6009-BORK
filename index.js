@@ -9,27 +9,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 http.listen(3001, function () {
     console.log(`server running at http://localhost:3001`);
-    
-})
 
-
+});
 
 let five = require('johnny-five');
 let arduino = new five.Board();
 let temperature;
-
-
-//let light_pin_led;
-/* io.on('connection', function (light) {
-    light.on('light_status', function () {
-        light_pin_led.toggle();
-    })
-}) */
-
-
-
-
-
 
 arduino.on('ready', function () {
     console.log("arduino is running");
@@ -38,6 +23,12 @@ arduino.on('ready', function () {
         pin: 'A0',
         freq: 1000
 });
+
+temperature.on('data', function () {
+    io.sockets.emit('temperature', this.celsius)
+});
+
+//Neo Pixels Code
 
 var strip = null
 
@@ -55,8 +46,9 @@ arduino.on('ready', function() {
     })
 });
 
-// LED
-var led = new five.Led(8);
+var led = new five.Led(6);
+
+led.on();
 
 // Proximity Sensors
 var proximity = new five.Proximity({
@@ -64,6 +56,9 @@ var proximity = new five.Proximity({
     pin: 12,
     freq: 900
 });
+
+// LED
+var led = new five.Led(8);
 
 // Proximity on Data function
 proximity.on("data", function() {
@@ -74,10 +69,11 @@ proximity.on("data", function() {
     console.log("-----------------");
 });
 
+let cmtr = this.cm;
+let exct = Math.floor(cmtr);
+
 // Proximity on Data Change function
 proximity.on("change", function() {
-    var cmtr = this.cm;
-    var exct = Math.floor(cmtr);   
     // Detect if the distances below 20cm
     if (exct < 10) {
         
@@ -88,28 +84,21 @@ proximity.on("change", function() {
     }
 });
 
-    /* light_pin_led = new five.Led(13);
-    light_pin_led.off(); */
-
-temperature.on('data', function () {
-    io.sockets.emit('temperature', this.celsius)
-});
-
+proximity.on("change", function() {
+    io.sockets.emit("proximity", this.cm);
+})
 
 // Servo motor initiated
 var servo = new five.Servo({
     id: "FeedServo", //refer with this id
     pin: 10,
     type: "standard",
-    range: [0, 180],
-    fps: 100,
-    invert: false,
+    range: [0, 90],
+    fps: 200,
+    invert: true,
     startAt: 90,
     center: true,
 });
 
 servo.sweep();
-
-
-
 });

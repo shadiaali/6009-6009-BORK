@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bork Breeds</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+<!--Css-->
+<link rel='stylesheet' href='/stylesheets/style.css' />
+
+    </head>
+    <body>
+<!--start content-->   
+<div class="container-fluid">
+<div class="row">
+    <div class="col-10">
+
+ <!--start container-->       
+<div class="row mt-5 ml-1">
+    <!--start nav--> 
+<div class="col-2 sticky-top">
+<!-- Menu icon -->
+<div id="menu-icon-shape">
+    <div id="menu-icon">
+    <div id="top"></div>
+    <div id="middle"></div>
+    <div id="bottom"></div>
+    </div>
+</div>
+<!-- Overlay menu -->
+<div id="overlay-nav">
+    <div id="nav-content">
+    <ul>
+        <li><a href="/dash">Dashboard</a></li>
+        <li><a href="/breeds">Dog Breeds</a></li>
+        <li><a href="/api/bork">Bork API</a></li>
+    </ul>
+    </div>
+</div> 
+</div>
+<!--end container--> 
+<!--start page title--> 
+<div class="col-10"><h1>Breeds</h1></div>
+<!--end page title--> 
+
+<!--start content container--> 
+<div class="container mt-4 my-4 mx-4">
+
+<div id="borkList" class="row d-flex justify-content-center">
+
+</div>
+
+
+</div>
+<!--end content container-->
+
+
+
+</div>
+<!--end container--> 
+
+
+</div>
+<div class="col-2 orangeribbon sticky-top"><div class="sticky-top orangeribbon"><img src="images/bork-white-logo.png" style="width:100%;">
+
+
+    <div class="row d-flex justify-content-center">
+        <h2 class="strong text-white mt-5">Quick Stats</h2>
+        <div class="card" style="min-width:80px;width:120px;">
+           
+                
+                <div class="text-center card-body justify-content-center" style="max-width:100%">
+                    
+                <h2><i class="fas fa-thermometer-half fa-2x"></i><hr><span id="thermometer">0</span></h2>
+                        
+                </div></div>
+
+
+                <div class="card" style="min-width:80px;width:120px;">
+           
+                
+                    <div class="card-body justify-content-center text-center" style="max-width:100%;">
+                        
+                    <h2><i class="fab fa-cloudscale fa-2x"></i><hr><span id="proximity">0</span></h2>
+                            
+                    </div></div>
+
+
+                    <div class="card" style="min-width:80px;width:120px;">
+           
+                <!--Light-->
+                        <div class="card-body justify-content-center text-center" style="max-width:100%">
+                            
+                        <h2><i class="far fa-lightbulb fa-2x"></i><hr> <span id="light">0</span></h2>
+                                
+                        </div></div>
+                <!--end light-->
+    </div>
+    
+
+</div>
+</div>
+
+</div>
+
+
+<!--end content-->
+
+<script src="http://localhost:3001/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>  
+<script type="text/javascript" src="nav.js"></script>
+<script type="text/javascript" src="api.js"></script>
+    
+    </body>
+</html>
