@@ -74,6 +74,8 @@ let exct = Math.floor(cmtr);
 
 // Proximity on Data Change function
 proximity.on("change", function() {
+    cmtr = this.cm;
+    exct = Math.floor(cmtr);
     // Detect if the distances below 20cm
     if (exct < 10) {
         
